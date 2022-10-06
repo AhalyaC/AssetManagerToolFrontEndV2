@@ -14,6 +14,7 @@ import { NgToastService } from 'ng-angular-popup';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
+  adminDetails: any;
 
   
   @HostListener('window:keyup', ['$event'])
@@ -50,7 +51,7 @@ export class ListUsersComponent implements OnInit {
         this.usersList = data;
        console.table(data)
       })
-
+      this.adminDetails=JSON.parse(sessionStorage.getItem('AdminPayload') ||'{}')
   }
 /*  */
 deleteEmp(empId:string){

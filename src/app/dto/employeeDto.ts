@@ -9,4 +9,5 @@ export class EmployeeDto {
     status!: string;
     department!: string;
     designation!: string;
+    access!:string;
 }

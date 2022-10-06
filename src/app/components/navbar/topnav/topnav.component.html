@@ -27,7 +27,7 @@
           class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
         transition duration-150 ease-in-out origin-top min-w-32"
         >
-          <li class="rounded-sm px-3 py-1 hover:bg-gray-100 " routerLink="/admin/add-admin" >Add Admin &nbsp;
+          <li class="rounded-sm px-3 py-1 hover:bg-gray-100 " [ngClass]="{'hidden':adminDetails.access=='ReadWrite'?false:true}" routerLink="/admin/add-admin" >Add Admin &nbsp;
             <!-- <i class='fas fa-user-cog float-right'></i> -->
             </li>
           <li class="rounded-sm px-3 py-1 hover:bg-gray-100 justify-center" (click)="logout()">Logout <i class="fa-solid fa-arrow-right-from-bracket float-right"></i> </li>

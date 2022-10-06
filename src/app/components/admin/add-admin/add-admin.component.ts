@@ -37,6 +37,8 @@ export class AddAdminComponent implements OnInit {
   ngOnInit(): void {
     this.registerGroup = new FormGroup({
       "password": new FormControl(null, [Validators.required,PasswordStrengthValidator]),
+      "access": new FormControl(null, [Validators.required]),
+
 
     },
 
@@ -51,6 +53,8 @@ export class AddAdminComponent implements OnInit {
   get empId() { return this.loginGroup.get('empId'); }
   get confirmPassword() { return this.registerGroup.get('confirmPassword'); }
   get password() { return this.registerGroup.get('password'); }
+  get access() { return this.registerGroup.get('access'); }
+
   submitted = false;
 /* For Step Controll Group */
   firstFormGroup = this._formBuilder.group({
@@ -88,6 +92,8 @@ export class AddAdminComponent implements OnInit {
       this.admin.mail=this.emp.mail;
       this.admin.password=this.passwd;
       this.admin.location=this.emp.location;
+      this.admin.access=this.emp.access;
+
       console.log(this.admin);
 
       this.registerService.registerAdmin(this.admin).subscribe(data=>{

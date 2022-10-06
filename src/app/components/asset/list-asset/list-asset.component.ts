@@ -21,6 +21,7 @@ export class ListAssetComponent implements OnInit {
   temp = String;
   page: number = 1;
   count: number = 10;
+  adminDetails: any;
 
 
 
@@ -35,7 +36,7 @@ export class ListAssetComponent implements OnInit {
         console.log(data)
       })
 
-
+      this.adminDetails=JSON.parse(sessionStorage.getItem('AdminPayload') ||'{}')
   }
 
   returnAsset(serialNumber:string,empId:string){

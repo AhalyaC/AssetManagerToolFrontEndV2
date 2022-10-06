@@ -8,5 +8,6 @@ export class AdminDto {
     password!:string;
     otp!:string;
     date!:Date;
+    access!:string;
 }
 

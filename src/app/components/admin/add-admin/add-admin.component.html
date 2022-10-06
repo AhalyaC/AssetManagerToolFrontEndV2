@@ -49,11 +49,27 @@
                 </div>
 
              </div>
-
+             <!-- <div class="flex flex-wrap -mx-3 "> -->
+              <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+              Access
+     </label>
+                  <select formControlName="access" [(ngModel)]="emp.access" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" id="grid-state">
+      <option value="Read">Read</option>
+      <option value="ReadWrite">ReadWrite</option>
+    </select>
+                  <!-- <div *ngIf="access.invalid && access.touched || submitted">
+                <span class="error" *ngIf="access.errors?.required">Access is required</span>
+            </div> -->
+                  <div *ngIf="registerGroup.get('access').hasError('required')">
+                      access is required
+                  </div>
+              </div>
 
 
             <div class="flex flex-wrap -mx-3 ">
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <!-- <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0"> -->
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                     Password
                   </label>

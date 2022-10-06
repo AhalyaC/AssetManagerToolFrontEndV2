@@ -11,10 +11,13 @@ import { EmployeeDto } from 'src/app/dto/employeeDto';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
+  adminDetails: any;
   
   constructor(private dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.adminDetails=JSON.parse(sessionStorage.getItem('AdminPayload') ||'{}')
+
   }
 addAdmin(){
   this.dialog.open(RegisterComponent)
